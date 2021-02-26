@@ -115,6 +115,10 @@ function postToDiscord (reportData) {
             console.log(reportData.code, " already sent!");
             return false;
         }
+        else if (!reportData.zone) {
+            console.log(reportData.code, " is missing zone information, not sent!");
+            return false;
+        }
         else {
             //post to Discord
             console.log(JSON.stringify(reportData));
